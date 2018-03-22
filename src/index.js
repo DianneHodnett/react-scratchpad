@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import {BrowserRouter as Router} from 'react-router-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import HomeIcon from 'material-ui-icons/Home'
+// import AddCircleIcon from 'material-ui-icons/AddCircle'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import Home from './Home'
+import './index.css'
+
+const App = (
+  <MuiThemeProvider>
+    <Router>
+      <div>
+        <Home navIcon1={<HomeIcon/>}/>
+        {/*<hr/>*/}
+        {/*<Home navIcon1={<AddCircleIcon/>}/>*/}
+      </div>
+    </Router>
+  </MuiThemeProvider>
+)
+ReactDOM.render(App, document.getElementById('root'));
+
