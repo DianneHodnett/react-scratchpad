@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import Drawer from 'material-ui/Drawer'
-import {Link} from 'react-router-dom'
-
+import MenuItem from 'material-ui/MenuItem'
 
 export default class extends Component {
   render () {
+    const handleClick= (match) => {
+      window.location.replace(match)
+    }
     return (
       <div>
         <Drawer open={this.props.open}
                 docked={false}
                 onRequestChange={this.props.change}>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>
-            <li><Link to='/about'>About Us</Link></li>
-          </ul>
+          <MenuItem onClick={() => handleClick('/')}>Home</MenuItem>
+          <MenuItem onClick={() => handleClick('/Contact')} >Contact</MenuItem>
+          <MenuItem onClick={() => handleClick('/About')}>About</MenuItem>
         </Drawer>
       </div>
     )
