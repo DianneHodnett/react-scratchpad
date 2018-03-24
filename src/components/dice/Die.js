@@ -11,10 +11,10 @@ export default class extends Component {
   }
   render () {
     const rollDie = () => {
-    
+      this.setState(() => ({dieState: Math.ceil(Math.random() *  this.props.numSides)}))
     }
     return (
-      <Paper>
+      <Paper className="paper">
         <p>Number o' Sides: {this.props.numSides}</p>
         <p>Result of Roll: {this.state.dieState}</p>
         <RaisedButton label="Roll Die" onClick={rollDie}/>

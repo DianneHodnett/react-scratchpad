@@ -1,3 +1,12 @@
 body {
     margin: 0
 }
+.paper {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.numPicker {
+    margin-left: 10px;
+    max-width: 5%;
+}
